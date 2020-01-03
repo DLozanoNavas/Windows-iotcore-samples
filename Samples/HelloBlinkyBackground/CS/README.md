@@ -11,7 +11,7 @@ This application is designed for a headless device.  To better understand what H
 ## Load the project in Visual Studio
 ___
 
-You can find the source code for this sample by downloading a zip of all of our samples [here](https://github.com/Microsoft/Windows-iotcore-samples/archive/master.zip) and navigating to the `samples-develop\HelloBlinkyBackground`.  The sample code is available in either C++ or C#, however the documentation here only details the C# variant. Make a copy of the folder on your disk and open the project from Visual Studio.
+You can find the source code for this sample by downloading a zip of all of our samples [here](https://github.com/Microsoft/Windows-iotcore-samples/archive/master.zip) and navigating to the `samples\HelloBlinkyBackground`.  The sample code is available in either C++ or C#, however the documentation here only details the C# variant. Make a copy of the folder on your disk and open the project from Visual Studio.
 
 Make sure you connect the LED to your board. Go back to the basic 'Blinky' [sample](https://github.com/Microsoft/Windows-iotcore-samples/tree/master/Samples/HelloBlinky) if you need guidance.
 
@@ -29,7 +29,7 @@ The code for this sample is pretty simple. We use a timer, and each time the 'Ti
 ## Timer code
 ___
 Here is how you set up the timer in C#:
-``` C#
+```csharp
 using Windows.System.Threading;
 
 BackgroundTaskDeferral _deferral;
@@ -52,7 +52,7 @@ private void Timer_Tick(ThreadPoolTimer timer)
 ___
 To drive the GPIO pin, first we need to initialize it. Here is the C# code (notice how we leverage the new WinRT classes in the Windows.Devices.Gpio namespace):
 
-``` C#
+```csharp
 using Windows.Devices.Gpio;
 
 private void InitGPIO()
@@ -96,13 +96,13 @@ Once we have access to the `GpioOutputPin` instance, it's trivial to change the 
 
 To turn the LED on, simply write the value `GpioPinValue.Low` to the pin:
 
-``` C#
+```csharp
 this.pin.Write(GpioPinValue.Low);
 ```
 
 and of course, write `GpioPinValue.High` to turn the LED off:
 
-``` C#
+```csharp
 this.pin.Write(GpioPinValue.High);
 ```
 

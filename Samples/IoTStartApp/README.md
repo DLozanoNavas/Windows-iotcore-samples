@@ -1,3 +1,13 @@
+---
+page_type: sample
+urlFragment: iot-startup-app
+languages: 
+  - csharp
+products:
+  - windows
+description: UWP that lists all installed apps on the IoT Core System using the PackageManager API for Windows 10 IoT Core.
+---
+
 # IoT Startup App sample
 
 We'll create a UWP app to demonstrate how one can create a simple startup app that can list all the installed apps on the IoT Core System using PackageManager API. We will also demonstrate how we can use the APIs to launch an app.
@@ -10,17 +20,17 @@ You can find the source code for this sample by downloading a zip of all of our 
 With the application open in Visual Studio, set the architecture in the toolbar dropdown. If you’re building for MinnowBoard Max, select x86. If you’re building for Raspberry Pi 2 or 3, select ARM.
 Next, in the Visual Studio toolbar, click on the Local Machine dropdown and select Remote Machine.
 
-<img src="../../Resources/images/IoTStartApp/cpp-remote-machine-debugging.png">
+![Remote machine debugging](../../Resources/images/IoTStartApp/cpp-remote-machine-debugging.png)
 
 Next, right click on your project in the Solution Explorer pane. Select Properties.
 
-<img src="../../Resources/images/IoTStartApp/cpp-project-properties.png">
+![Solution Explorer pane with properties](../../Resources/images/IoTStartApp/cpp-project-properties.png)
 
 Under Configuration Properties -> Debugging, modify the following fields:
 Machine Name: If you previously used PowerShell to set a unique name for your device, you can enter it here (in this example, we’re using my-device). Otherwise, use the IP address of your Windows IoT Core device.
 Authentication Mode: Set to Universal (Unencrypted Protocol)
 
-<img src="../../Resources/images/IoTStartApp/cpp-debug-project-properties.png">
+![Project properties for debugging](../../Resources/images/IoTStartApp/cpp-debug-project-properties.png)
 
 When everything is set up, you should be able to press F5 from Visual Studio. The IoT Startup App will deploy and start on the Windows IoT device.
 
